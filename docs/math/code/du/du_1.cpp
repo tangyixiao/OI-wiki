@@ -9,7 +9,7 @@ map<long long, long long> mp_mu;
 
 long long S_mu(long long x) {  // 求mu的前缀和
   if (x < MAXN) return sum_mu[x];
-  if (mp_mu[x]) return mp_mu[x];  // 如果map中已有该大小的mu值，则可直接返回
+  if (mp_mu.count(x)) return mp_mu[x];  // 如果map中已有该大小的mu值，则可直接返回
   long long ret = (long long)1;
   for (long long i = 2, j; i <= x; i = j + 1) {
     j = x / (x / i);
